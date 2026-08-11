@@ -1,0 +1,1 @@
+# esercitazione_di_compilazione_11.08.2026
