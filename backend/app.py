@@ -4,7 +4,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-# La lista deve stare fuori dalle funzioni per essere visibile a tutte le rotte
+
 lista = [{'id': 1, 'nome': 'red dead redemption', 'anno_pub': '2010', 'versione': 'deluxe'}]
 
 @app.route("/giochi", methods=["GET"])
@@ -19,7 +19,7 @@ def add_giochi():
     return jsonify(nuovo_gioco), 201
 
 @app.route("/giochi/<int:gioco_id>", methods=["DELETE"])
-def delete_giochi(gioco_id):  # <-- gioco_id va inserito qui!
+def delete_giochi(gioco_id): 
     global lista
     lista = [g for g in lista if g["id"] != gioco_id]
     return jsonify({"messaggio": f"Gioco {gioco_id} eliminato"}), 200
